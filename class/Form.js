@@ -81,7 +81,7 @@ export default class Form {
                 .then(response => response.json())
                 .then(sendData =>
                 {
-                    let contentConfirm = localStorage.setItem("validId", JSON.stringify(sendData.orderId));
+                    let contentConfirm = localStorage.setItem("validId", sendData.orderId);
 
                 });
         }
