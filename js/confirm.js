@@ -12,4 +12,6 @@ confirmSentence.classList.add("text-center");
 let check = document.getElementById("check");
 check.style.color = "green";
 check.style.fontSize = "70px";
-check.classList.add("mb-4")
+check.classList.add("mb-4");
+
+localStorage.removeItem("cart");
