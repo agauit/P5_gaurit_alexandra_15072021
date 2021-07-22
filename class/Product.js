@@ -12,11 +12,12 @@ export default class Product {
      * @param {float} donnees.price
      */
     constructor(donnees) {
-        this._id = undefined;
-        this.imageUrl = undefined;
-        this.name = undefined;
-        this.description = undefined;
-        this.price = undefined;
+        this._id = "";
+        //img pas trouvé
+        this.imageUrl = "";
+        this.name = "Produit non trouvé";
+        this.description = "";
+        this.price = 0;
         this.quantity = 1;
 
         Object.assign(this, donnees);
