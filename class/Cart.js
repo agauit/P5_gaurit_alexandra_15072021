@@ -88,6 +88,10 @@ export default class Cart {
             const name = document.createElement("p");
             name.innerHTML = product.name;
             id.appendChild(name);
+            id.classList.add("d-flex");
+            id.classList.add("flex-column");
+            id.classList.add("justify-content-between");
+            id.classList.add("align-items-center");
 
             const removeQuantity = document.createElement("i");
             removeQuantity.classList.add("fa");
@@ -95,7 +99,7 @@ export default class Cart {
             removeQuantity.addEventListener("click" , this.quantityLess.bind(this, product));
 
             const quantity = document.createElement("p");
-            quantity.innerHTML = "Quantité : " + product.quantity;
+            quantity.innerHTML = product.quantity;
             id.appendChild(quantity);
 
             const addQuantity = document.createElement("i");
@@ -103,24 +107,17 @@ export default class Cart {
             addQuantity.classList.add("fa-plus");
             addQuantity.addEventListener("click" , this.quantityPlus.bind(this, product));
 
-
-
             const div = document.createElement("div");
             div.appendChild(name);
             div.appendChild(removeQuantity);
             div.appendChild(quantity);
             div.appendChild(addQuantity);
             id.appendChild(div);
-            div.classList.add("d-flex");
-            div.classList.add("flex-row");
-            div.classList.add("justify-content-around");
-            div.classList.add("align-items-center");
-            div.classList.add("py-2");
 
             const price = document.createElement("p");
-            price.innerHTML = parseFloat(product.price) * product.quantity / 100 + " euros ";
+            price.innerHTML = parseFloat(product.price) * product.quantity / 100 + " € ";
             div.appendChild(price);
-            div.classList.add("mx-2");
+            div.classList.add("mx-5");
 
             const total = document.getElementById("total-price");
             total.innerHTML = "Le prix total de votre panier est de " + this.totalPrice() / 100 + " euros";

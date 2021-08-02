@@ -14,7 +14,7 @@ export default class Bear extends Product {
      */
     constructor(donnees) {
         super(donnees);
-        const objectData = Object.assign({colors : [] , test : 123}  , this);
+        const objectData = Object.assign({colors : []}  , this);
         Object.assign(this, objectData);
         console.log(this);
     }
@@ -37,14 +37,13 @@ export default class Bear extends Product {
                 figcaption.classList.add("card-body");
                 figure.appendChild(figcaption);
                 galerie.appendChild(figure);
-                figure.style.width = "350px";
+                figure.style.width = "280px";
+                figure.style.height = "400px";
                 figure.classList.add("card");
                 const title = document.createElement("h2");
                 title.innerText = this.name;
                 const desc = document.createElement("p");
                 desc.innerText = this.description;
-                figcaption.appendChild(title);
-                figcaption.appendChild(desc);
                 const div = document.createElement("div");
                 galerie.appendChild(div);
                 div.appendChild(figure);
@@ -58,6 +57,17 @@ export default class Bear extends Product {
                 link.appendChild(desc);
                 link.style.color = "black";
                 link.style.textDecoration = "none";
+                // galerie.classList.add("sm-col-4");
+                figcaption.appendChild(title);
+                figcaption.appendChild(desc);
+                img.setAttribute("alt" , this.name);
+                figure.classList.add("shadow");
+                figure.classList.add("mx-5");
+                div.classList.add("my-3");
+                figcaption.classList.add("text-center");
+                title.classList.add("py-2");
+
+
                 break;
 
             case "product" :
@@ -65,12 +75,11 @@ export default class Bear extends Product {
                 const h1 = document.getElementById("h1");
                 h1.innerHTML = "Découvrez notre ours " + this.name;
                 h1.style.marginLeft = "30%";
+                h1.style.marginRight = "30%";
 
                 const image = document.createElement("img");
                 image.src = this.imageUrl;
                 image.style.width = "100%";
-                
-
 
                 const figureOurs = document.createElement("figure");
                 figureOurs.appendChild(image);
@@ -139,7 +148,6 @@ export default class Bear extends Product {
                 button.innerHTML = "Ajouter au panier";
                 button.classList.add("btn");
                 button.classList.add("btn-outline-dark");
-                button.style.margin = "5% 0px 0px 32%";
                 button.style.paddingBottom = "15px";
                 button.classList.add("btn-lg");
                 button.style.borderRadius = "0px";

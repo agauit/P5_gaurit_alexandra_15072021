@@ -44,7 +44,7 @@ export default class Form {
     submit(e){
         //on empêche la validation du formulaire
         e.preventDefault();
-        //on supprime les messages d'erreurs s'il y en a
+        //on supprime les messages d'erreur s'il y en a
         let errorMessages = this.form.querySelectorAll(".input-errormessage");
         errorMessages = [].slice.call(errorMessages);
         errorMessages.forEach(errorMessage => errorMessage.parentNode.removeChild(errorMessage));
