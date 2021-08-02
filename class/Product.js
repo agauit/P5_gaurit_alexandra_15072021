@@ -13,10 +13,9 @@ export default class Product {
      */
     constructor(donnees) {
         this._id = "";
-        //img pas trouvé
-        this.imageUrl = "";
-        this.name = "Produit non trouvé";
-        this.description = "";
+        this.imageUrl = "../img/ours-pas-trouve";
+        this.name = "Inexistant";
+        this.description = " On dirait qu'il y a une erreur ! Cet ours n'existe pas, merci de retourner à la page d'accueil pour découvrir nos peluches faites à la main. ";
         this.price = 0;
         this.quantity = 1;
 
@@ -24,11 +23,12 @@ export default class Product {
     }
 
     _onProductClick() {
-        console.log("on doit ajouter le produit : ", this);
-        alert("Le produit " + this.name + " a été ajouté au panier");
-        const cart = new Cart();
-        cart.add(this);
-
+        if (this._id) {
+            console.log("on doit ajouter le produit : ", this);
+            alert("Le produit " + this.name + " a été ajouté au panier");
+            const cart = new Cart();
+            cart.add(this);
+        }
     }
 
 }

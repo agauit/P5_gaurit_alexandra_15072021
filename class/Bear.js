@@ -57,7 +57,6 @@ export default class Bear extends Product {
                 link.appendChild(desc);
                 link.style.color = "black";
                 link.style.textDecoration = "none";
-                // galerie.classList.add("sm-col-4");
                 figcaption.appendChild(title);
                 figcaption.appendChild(desc);
                 img.setAttribute("alt" , this.name);
@@ -66,8 +65,6 @@ export default class Bear extends Product {
                 div.classList.add("my-3");
                 figcaption.classList.add("text-center");
                 title.classList.add("py-2");
-
-
                 break;
 
             case "product" :
@@ -80,6 +77,7 @@ export default class Bear extends Product {
                 const image = document.createElement("img");
                 image.src = this.imageUrl;
                 image.style.width = "100%";
+                image.setAttribute("alt", "Notre ours" + this.name);
 
                 const figureOurs = document.createElement("figure");
                 figureOurs.appendChild(image);
@@ -92,8 +90,6 @@ export default class Bear extends Product {
 
                 const gal = document.getElementById("galerie");
                 gal.appendChild(figureOurs);
-                
-
 
                 const figcaptionOurs = document.createElement("figcaption");
                 figureOurs.appendChild(figcaptionOurs);
@@ -104,7 +100,6 @@ export default class Bear extends Product {
                 figcaptionOurs.appendChild(h2);
                 h2.innerHTML = this.name;
                 h2.style.fontSize = "2rem";
-
 
                 const price = document.createElement("p");
                 figcaptionOurs.appendChild(price);
@@ -135,13 +130,10 @@ export default class Bear extends Product {
                 divColor.appendChild(chooseColor);
                 divColor.appendChild(color);
 
-
-
                 const p = document.createElement("p");
                 figcaptionOurs.appendChild(p);
                 p.innerHTML = "Description du produit : <br>" + this.description;
                 p.style.marginTop = "2%";
-
 
                 const button = document.createElement("button");
                 figcaptionOurs.appendChild(button);
@@ -153,7 +145,6 @@ export default class Bear extends Product {
                 button.style.borderRadius = "0px";
                 button.style.borderBottom = "5px solid black";
                 button.addEventListener("click", this._onProductClick.bind(this));
-
 
                 break;
             default :
