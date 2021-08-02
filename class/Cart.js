@@ -90,8 +90,6 @@ export default class Cart {
             id.appendChild(name);
             id.classList.add("d-flex");
             id.classList.add("flex-column");
-            id.classList.add("justify-content-between");
-            id.classList.add("align-items-center");
 
             const removeQuantity = document.createElement("i");
             removeQuantity.classList.add("fa");
@@ -113,11 +111,18 @@ export default class Cart {
             div.appendChild(quantity);
             div.appendChild(addQuantity);
             id.appendChild(div);
+            div.classList.add("d-flex");
+            div.classList.add("p-2");
+            div.classList.add("justify-content-evenly");
+            div.classList.add("align-items-center");
+            div.classList.add("my-3");
+            div.classList.add("flex-wrap");
+            div.classList.add("flex-sm-row");
+            div.classList.add("flex-column");
 
             const price = document.createElement("p");
             price.innerHTML = parseFloat(product.price) * product.quantity / 100 + " € ";
             div.appendChild(price);
-            div.classList.add("mx-5");
 
             const total = document.getElementById("total-price");
             total.innerHTML = "Le prix total de votre panier est de " + this.totalPrice() / 100 + " euros";
