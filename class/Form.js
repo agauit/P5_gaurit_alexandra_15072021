@@ -1,5 +1,7 @@
 import Cart from "./Cart.js";
-
+/**
+ * @desc On traite le formulaire de contact, avant de l'envoyer
+ */
 export default class Form {
     constructor(form) {
         this.form = form;
@@ -35,10 +37,6 @@ export default class Form {
             // alert(message);
             return false;
         }
-    }
-
-    _displayError(errorMessage){
-        alert(errorMessage);
     }
 
     submit(e){

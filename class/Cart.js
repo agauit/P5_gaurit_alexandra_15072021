@@ -1,11 +1,5 @@
 /**
  * @desc on ajoute les produits au panier
- * @param {Object} donnees Les informations d'un produit
- * @param {string} donnees.imageUrl
- * @param {number} donnees._id
- * @param {string} donnees.description
- * @param {string} donnees.name
- * @param {float} donnees.price
  */
 
 export default class Cart {
@@ -58,13 +52,19 @@ export default class Cart {
         }
         return total;
     }
-
+    /**
+     *
+     * @param {Product} product
+     */
     quantityPlus(product){
         this.content[product._id].quantity++;
         this._updateLocalStorage();
         this.display();
     }
-
+    /**
+     *
+     * @param {Product} product
+     */
     quantityLess(product){
         this.content[product._id].quantity--;
         if(this.content[product._id].quantity < 1){
