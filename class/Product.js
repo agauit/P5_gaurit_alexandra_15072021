@@ -24,7 +24,6 @@ export default class Product {
 
     _onProductClick() {
         if (this._id) {
-            console.log("on doit ajouter le produit : ", this);
             alert("Le produit " + this.name + " a été ajouté au panier");
             const cart = new Cart();
             cart.add(this);

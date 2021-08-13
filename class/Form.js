@@ -54,7 +54,6 @@ export default class Form {
         let inputs = this.form.querySelectorAll("input[data-regex][data-message]");
         //conversion en Array pour pouvoir faire un forEach
         inputs = [].slice.call(inputs);
-        console.log(inputs);
         let formIsValid = true;
         inputs.forEach(input => {
             if(!this._isValid(input)){
@@ -62,7 +61,6 @@ export default class Form {
             }
         })
         if(formIsValid){
-            console.log(this.values);
             const cart = new Cart();
             const productIds = Object.keys(cart.content);
             const body = {

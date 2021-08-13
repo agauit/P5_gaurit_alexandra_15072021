@@ -7,8 +7,6 @@
  * @param {string} donnees.name
  * @param {float} donnees.price
  */
-import Product from "./Product";
-
 
 export default class Cart {
 
@@ -58,7 +56,6 @@ export default class Cart {
         for (let [_id, product] of Object.entries(this.content)){
             total += product.quantity * product.price;
         }
-        console.log(total);
         return total;
     }
 

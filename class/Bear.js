@@ -16,7 +16,6 @@ export default class Bear extends Product {
         super(donnees);
         const objectData = Object.assign({colors : []}  , this);
         Object.assign(this, objectData);
-        console.log(this);
     }
 
     /**
